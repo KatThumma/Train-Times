@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Train Times</title>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- bootstrap js -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <!-- Jquery -->
+    <script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
+
+    <!-- Moment.js Reference -->
+    <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+
+  </head>
+<body>
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+          <h1 class="display-4">Train Times!</h1>
+          <p class="lead">Look to this table for accurate and up to date train times.</p>
+        </div>
+      </div>
+
+      <div class="card text-white bg-dark mb-3" style="max-width: 700rem;">
+       
+        <div class="card-body">
+         
+       
+
+      <table class="table table-bordered table-dark" id="trainTable">
+        <thead>
+          <tr>
+            <td scope="col">Train Name</td>
+            <td scope="col">Destination</td>
+            <td scope="col">Frequency</td>
+            <td scope="col">Next Arrival</td>
+            <td scope="col">Minutes Away</td>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- <tr>
+            <th scope="row">Hogwarts Express</th>
+            <td>Kings Cross</td>
+            <td>3 hours</td>
+            <td>8:00</td>
+            <td>30 min</td>
+          </tr>
+          <tr>
+            <th scope="row">Choo Choo Express</th>
+            <td>Grand Central Station</td>
+            <td>30 min</td>
+            <td>4:28</td>
+            <td>2 min</td>
+          </tr>
+          <tr>
+            <th scope="row">Hogwarts Express</th>
+            <td>Kings Cross</td>
+            <td>3 hours</td>
+            <td>8:00</td>
+            <td>30 min</td>
+          </tr>
+          <tr>
+          <th scope="row">Hogwarts Express</th>
+          <td>Kings Cross</td>
+          <td>3 hours</td>
+          <td>8:00</td>
+          <td>30 min</td>
+          </tr> -->
+          
+        </tbody>
+      </table>
+ </div>
+      </div>
+
+      <div class="card text-white bg-dark mb-3" style="max-width: 100%;">
+            <div class="card-header">Add Trains</div>
+            <div class="card-body">
+              <h5 class="card-title">Feel free to add more trains to the schedule</h5>
+              <p class="card-text"></p>
+           
+
+      <form>
+
+        <div class="form-group">
+          <label for="exampleInputTrain1">Train Name</label>
+          <input type="trainName" class="form-control" id="trainNameInput" placeholder="Enter Train Name">
+          
+        </div>
+        <div class="form-group">
+          <label for="exampleInputDestination1">Destination</label>
+          <input type="destination" class="form-control" id="destinationInput" placeholder="Place Name">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputFirstTrainTime1">First Train Time</label>
+            <input type="trainTime" class="form-control" id="firstTrainInput" placeholder="00:00">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputTrainFrequency1">Frequency (in minutes)</label>
+            <input type="frequency" class="form-control" id="frequencyInput" placeholder="# of Minutes">
+         </div>
+              
+        <button type="submit" class="btn btn-primary" id="addTrainButton">Submit</button>
+      </form>
+ </div>
+          </div>
+
+
+
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyD3rCts9vQmqicJvnsyYCBbaQWK9le-1Ls",
+    authDomain: "saturday-ee9ba.firebaseapp.com",
+    databaseURL: "https://saturday-ee9ba.firebaseio.com",
+    projectId: "saturday-ee9ba",
+    storageBucket: "saturday-ee9ba.appspot.com",
+    messagingSenderId: "310365635548"
+  };
+  firebase.initializeApp(config);
+</script>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src="logic.js"></script>
+</body>
+</html>

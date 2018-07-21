@@ -1,0 +1,14 @@
+body {
+    background-image: url("train.jpg");
+    /* background-color: aqua */
+
+}
+
+.card {margin: 40px}
+
+.jumbotron { background-color: rgba(78, 72, 72, 0.9);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: black;
+    
+
+}
